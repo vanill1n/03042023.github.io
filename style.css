@@ -41,7 +41,6 @@ body, html {
     box-shadow: 10px 10px 8px rgba(0,0,0,0.2);
   }
   
-  /* Sidebar links */
   .sidebar a {
     display: block;
     color: rgb(147, 121, 153);
@@ -49,19 +48,16 @@ body, html {
     text-decoration: none;
   }
   
-  /* Active/current link */
   .sidebar a.active {
     background-color: rgb(147, 121, 153);
     color: white;
   }
   
-  /* Links on mouse-over */
   .sidebar a:hover:not(.active) {
     background-color: rgb(147, 121, 153);
     color: white;
   }
   
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   div.content {
     left: 20%;
     padding: 1px 16px;
@@ -69,7 +65,6 @@ body, html {
     position: fixed;    
   }
   
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
     .sidebar {
       width: 100%;
@@ -80,7 +75,6 @@ body, html {
     div.content {margin-left: 0;}
   }
   
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
   @media screen and (max-width: 400px) {
     .sidebar a {
       text-align: center;
@@ -94,7 +88,6 @@ body, html {
     border-radius: 10px;
   }
   
-  /* Remove margins and padding from the list */
   ul {
     box-shadow: 10px 10px 8px rgba(0,0,0,0.2);
     margin: 0;
@@ -102,7 +95,6 @@ body, html {
     border-radius: 0;
   }
   
-  /* Style the list items */
   ul li {
     cursor: pointer;
     position: relative;
@@ -113,31 +105,26 @@ body, html {
     list-style-type: none;
     border-radius: 0;
   
-    /* make the list items unselectable */
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
   }
   
-  /* Set all odd list items to a different color (zebra-stripes) */
   ul li:nth-child(odd) {
     background: #edd8f3;
   }
-  
-  /* Darker background-color on hover */
+
   ul li:hover {
     background: #ccbace;
   }
   
-  /* When clicked on, add a background color and strike out text */
   ul li.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
   }
   
-  /* Add a "checked" mark when clicked on */
   ul li.checked::before {
     content: '';
     position: absolute;
@@ -151,7 +138,6 @@ body, html {
     width: 7px;
   }
   
-  /* Style the close button */
   .close {
     position: absolute;
     right: 0;
@@ -164,7 +150,6 @@ body, html {
     color: rgb(233, 195, 195);
   }
   
-  /* Style the header */
   .header {
     background-color: #d6bddb;
     padding: 30px 40px;
@@ -174,14 +159,12 @@ body, html {
     border-radius: 0;
   }
   
-  /* Clear floats after the header */
   .header:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  /* Style the input */
   input {
     margin: 0;
     border: none;
@@ -192,7 +175,6 @@ body, html {
     font-size: 16px;
   }
   
-  /* Style the "Add" button */
   .addBtn {
     padding: 10px;
     width: 25%;
@@ -212,7 +194,6 @@ body, html {
 
   /*mood tracker*/
 
-  /* Styling the container that holds the app's content */
   .container {
     width: 90%;
     max-width: 600px;
@@ -277,48 +258,30 @@ body, html {
     transition: background-color 0.3s;
   }
   
-  /* Hover state styling for the Save button */
   #save-btn:hover {
-    /* Change the background color when hovered */
     background-color: #acb6e5;
   }
   
-  /* Styling for the "Your mood today" heading (h2) */
   h2 {
-    /* Add margin to create space above the heading */
     margin-top: 30px;
-  
-    /* Dark text color for contrast */
     color: #333;
   }
   
-  /* Styling for the section where today's mood is displayed */
   #today-mood {
-    /* Add margin for spacing above the displayed mood */
     margin-top: 20px;
-  
-    /* Larger font size to make the displayed mood stand out */
     font-size: 2em;
   }
   
-  /* Styling for the message that appears after saving the mood */
   #save-message {
-    /* Add margin for spacing above the message */
     margin-top: 20px;
-  
-    /* Font size for the message text */
     font-size: 1.2em;
-  
-    /* Green color to indicate success */
     color: green;
   }
   
-  /* Hidden class to hide the message by default */
   .hidden {
     display: none;
   }
   
-  /* Styling for different mood-based background gradients */
   body.happy {
     background-image: linear-gradient(135deg, #fbc2eb, #a6c1ee);
   }
@@ -345,42 +308,38 @@ body, html {
     left: 30%;
     top: 10%;
     position: fixed;
-     /* Width of the outside container */
   }
   
-  /* The slider itself */
   .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none; 
     appearance: none;
-    width: 100%; /* Full-width */
-    height: 25px; /* Specified height */
+    width: 100%; 
+    height: 25px;
     background: #cc5252; 
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    outline: none; 
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
     transition: opacity .2s;
   }
   
-  /* Mouse-over effects */
   .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+    opacity: 1; 
   }
   
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
   .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 25px; 
+    height: 25px;
+    background: #04AA6D; 
+    cursor: pointer; 
   }
   
   .slider::-moz-range-thumb {
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    width: 25px; 
+    height: 25px; 
+    background: #04AA6D;
+    cursor: pointer; 
   }
 
   .slider {
@@ -421,10 +380,8 @@ body, html {
     perspective: 1000px; 
     top: 30%;
     right: 20%;
-    position: fixed;/* Remove this if you don't want the 3D effect */
-  }
+    position: fixed;
   
-  /* This container is needed to position the front and back side */
   .flip-box-inner {
     position: relative;
     width: 100%;
@@ -434,26 +391,22 @@ body, html {
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-box:hover .flip-box-inner {
     transform: rotateY(180deg);
   }
   
-  /* Position the front and back side */
   .flip-box-front, .flip-box-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   
-  /* Style the front side */
   .flip-box-front {
     background-image: url(3.png);
   }
   
-  /* Style the back side */
   .flip-box-back {
     background-image: url(4.png);
     transform: rotateY(180deg);
@@ -467,10 +420,9 @@ body, html {
     perspective: 1000px; 
     position: fixed;
     top: 30%;
-    left: 30%;/* Remove this if you don't want the 3D effect */
+    left: 30%;
   }
   
-  /* This container is needed to position the front and back side */
   .flip-box-inner2 {
     position: relative;
     width: 100%;
@@ -480,17 +432,15 @@ body, html {
     transform-style: preserve-3d;
   }
   
-  /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-box2:hover .flip-box-inner2 {
     transform: rotateY(180deg);
   }
   
-  /* Position the front and back side */
   .flip-box-front2, .flip-box-back2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
 
