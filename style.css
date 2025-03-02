@@ -1,0 +1,510 @@
+body, html {
+    height: 100%;
+    background-image: linear-gradient(rgb(247, 209, 216), rgb(196, 148, 196));
+  }
+
+  /*gallery*/
+  div.gallery {
+    margin: 10px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.2) ;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+    background-color: #e6d4eb;
+  }
+
+  /*sidebar*/
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    background-color: #e6d4eb;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: rgb(147, 121, 153);
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: rgb(147, 121, 153);
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: rgb(147, 121, 153);
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    left: 20%;
+    padding: 1px 16px;
+    height: 1000px;
+    position: fixed;    
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  /*TODO*/
+  * {
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  
+  /* Remove margins and padding from the list */
+  ul {
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.2);
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #edd8f3;
+    font-size: 18px;
+    transition: 0.2s;
+    list-style-type: none;
+    border-radius: 0;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #edd8f3;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ccbace;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: #a282d4;
+    color: rgb(233, 195, 195);
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #d6bddb;
+    padding: 30px 40px;
+    color:   rgb(233, 195, 195);
+    text-align: center;
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.2);
+    border-radius: 0;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+
+  /*mood tracker*/
+
+  /* Styling the container that holds the app's content */
+  .container {
+    width: 90%;
+    max-width: 600px;
+    right: 10%;
+    top: 1%;
+    position: fixed;
+    background-color: #d8dcf1;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  .mood-selector {
+    margin: 20px 0;
+  }
+  
+  .mood-btn {
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: transform 0.2s;
+  }
+  
+
+  .mood-btn:hover,
+  .mood-btn.selected {
+    transform: scale(1.2);
+  }
+  
+
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  #save-btn {
+    padding: 10px 30px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #f39e92;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Hover state styling for the Save button */
+  #save-btn:hover {
+    /* Change the background color when hovered */
+    background-color: #acb6e5;
+  }
+  
+  /* Styling for the "Your mood today" heading (h2) */
+  h2 {
+    /* Add margin to create space above the heading */
+    margin-top: 30px;
+  
+    /* Dark text color for contrast */
+    color: #333;
+  }
+  
+  /* Styling for the section where today's mood is displayed */
+  #today-mood {
+    /* Add margin for spacing above the displayed mood */
+    margin-top: 20px;
+  
+    /* Larger font size to make the displayed mood stand out */
+    font-size: 2em;
+  }
+  
+  /* Styling for the message that appears after saving the mood */
+  #save-message {
+    /* Add margin for spacing above the message */
+    margin-top: 20px;
+  
+    /* Font size for the message text */
+    font-size: 1.2em;
+  
+    /* Green color to indicate success */
+    color: green;
+  }
+  
+  /* Hidden class to hide the message by default */
+  .hidden {
+    display: none;
+  }
+  
+  /* Styling for different mood-based background gradients */
+  body.happy {
+    background-image: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  }
+  
+  body.sad {
+    background-image: linear-gradient(135deg, #74ebd5, #acb6e5);
+  }
+  
+  body.angry {
+    background-image: linear-gradient(135deg, #ff758c, #ff7eb3);
+  }
+  
+  body.tired {
+    background-image: linear-gradient(135deg, #757f9a, #d7dde8);
+  }
+  
+  body.excited {
+    background-image: linear-gradient(135deg, #fce38a, #f38181);
+  }
+
+  /*FIDGETS*/
+  .slidecontainer {
+    width: 50%;
+    left: 30%;
+    top: 10%;
+    position: fixed;
+     /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #cc5252; 
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d38888;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #735388;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+
+  .flip-box {
+    background-color: transparent;
+    width: 382px;
+    height: 369px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    top: 30%;
+    right: 20%;
+    position: fixed;/* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front {
+    background-image: url(3.png);
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-image: url(4.png);
+    transform: rotateY(180deg);
+  }
+
+  .flip-box2 {
+    background-color: transparent;
+    width: 382px;
+    height: 369px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    position: fixed;
+    top: 30%;
+    left: 30%;/* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box2:hover .flip-box-inner2 {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front2, .flip-box-back2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  .flip-box2:hover .flip-box-inner2 {
+    color: black;
+    transform: rotateX(180deg);
+  }
+
+  .flip-box-front2 {
+    background-image: url(scfrront.png);
+    background-size: cover;
+  }
+  .flip-box-back2 {
+    background-image: url(scback.png);
+    background-size: cover;
+    transform: rotateX(180deg);
+  }

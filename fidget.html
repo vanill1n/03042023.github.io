@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ♡
+        </title>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <link rel="stylesheet" href="style.css">
+        <script src="td.js"></script>
+            <div class="sidebar">
+                <img src="side.png" alt="majo" style="width: 100%;">
+
+                
+                <p style="font-size: 30px; color: rgb(180, 149, 189); text-align: center; height: 5px;"><span id="time"></span></p>
+                <script>
+                var dt = new Date();
+                document.getElementById("time").innerHTML = dt.toLocaleTimeString();
+                </script>
+
+                <p style="font-size: 30px; color: rgb(180, 149, 189); text-align: center;">Today is <span id="date"></span></p>
+                    <script>
+                    var dt = new Date();
+                    document.getElementById("date").innerHTML = dt.toLocaleDateString();
+                    </script>
+              
+                <a href="home.html">Gallery</a>
+                <a href="td.html">Journal</a>
+                <a class="active">Fidget</a>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1Rt3HAIh7VcSddDTkrA2cC?utm_source=generator" width="100%" height="250px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+              </div>
+              
+              <!-- Page content -->
+              <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                  </div>
+                  <div class="flip-box-back">
+                  </div>
+                </div>
+              </div>
+              <div class="flip-box2">
+                <div class="flip-box-inner2">
+                  <div class="flip-box-front2">
+                  </div>
+                  <div class="flip-box-back2">
+                  </div>
+                </div>
+              </div>
+        </body>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ♡
+        </title>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <link rel="stylesheet" href="style.css">
+        <script src="td.js"></script>
+            <div class="sidebar">
+                <img src="side.png" alt="majo" style="width: 100%;">
+
+                
+                <p style="font-size: 30px; color: rgb(180, 149, 189); text-align: center; height: 5px;"><span id="time"></span></p>
+                <script>
+                var dt = new Date();
+                document.getElementById("time").innerHTML = dt.toLocaleTimeString();
+                </script>
+
+                <p style="font-size: 30px; color: rgb(180, 149, 189); text-align: center;">Today is <span id="date"></span></p>
+                    <script>
+                    var dt = new Date();
+                    document.getElementById("date").innerHTML = dt.toLocaleDateString();
+                    </script>
+              
+                <a href="home.html">Gallery</a>
+                <a class="active" href="#news">Journal</a>
+                <a href="fidget.html">Fidget</a>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1Rt3HAIh7VcSddDTkrA2cC?utm_source=generator" width="100%" height="250px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+              </div>
+              
+              <!-- Page content -->
+              <div class="content">
+                <div class="todo"style="width: 150%;">
+                <div id="myDIV" class="header">
+                    <h2>My To Do List</h2>
+                    <input type="text" id="myInput" placeholder="Title...">
+                    <span onclick="newElement()" class="addBtn">Add</span>
+                  </div>
+                  
+                  <ul id="myUL">
+                    <li>Love me!!</li>
+                    <li class="checked">Give gift</li>
+                  </ul>
+              </div>
+              <div class="container">
+                <h1>Mood Tracker</h1>
+                <p>This actually isn't saved anywhere</p>
+                <div class="mood-selector">
+                    <button class="mood-btn" data-mood="happy">😊</button>
+                    <button class="mood-btn" data-mood="sad">😢</button>
+                    <button class="mood-btn" data-mood="angry">😠</button>
+                    <button class="mood-btn" data-mood="tired">😴</button>
+                    <button class="mood-btn" data-mood="excited">😃</button>
+                </div>
+                <textarea id="note" placeholder="Add a note..."></textarea>
+                <button id="save-btn">Save</button>
+                <h2>I'm always here for you :]</h2>
+                <div id="today-mood"></div>
+                <div id="save-message" class="hidden"></div>
+        
+            </div>
+       
+            <script src="script.js"></script>
+        
+            </div>
+        </body>
